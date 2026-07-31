@@ -1,0 +1,256 @@
+:root {
+    --bg: #000;
+    --fg: #fff;
+    --dim: #999;
+    --blood: #cc0000;
+    --border: #333;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--fg);
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg);
+}
+
+/* ── ASCII banner ───────────────────────────────── */
+
+pre.main {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 30px 10px 10px;
+    max-width: 720px;
+    color: var(--fg);
+    line-height: 13px;
+    font-size: 12px;
+    overflow-x: auto;
+}
+
+/* ── CV layout ──────────────────────────────────── */
+
+main.cv {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cv-header h1 {
+    font-size: 22px;
+    margin: 10px 0 2px;
+    letter-spacing: 1px;
+}
+
+.cv-header .alias { color: var(--blood); }
+
+.tagline {
+    margin: 0 0 4px;
+    color: var(--fg);
+    font-weight: bold;
+}
+
+.meta-line {
+    margin: 0 0 2px;
+    color: var(--dim);
+    font-size: 13px;
+}
+
+.meta-line:last-of-type { margin-bottom: 12px; }
+
+.contact-nav a {
+    margin-right: 14px;
+}
+
+section {
+    margin-top: 36px;
+    border-top: 1px dashed var(--border);
+    padding-top: 18px;
+}
+
+h2 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+    color: var(--fg);
+}
+
+.prompt { color: var(--blood); }
+
+p { margin: 0 0 12px; }
+
+strong { color: var(--fg); }
+
+/* ── Links ──────────────────────────────────────── */
+
+a, a:visited {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--blood);
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--fg);
+    background-image: url('background.gif');
+    background-repeat: repeat;
+    text-decoration: none;
+}
+
+/* ── Lists ──────────────────────────────────────── */
+
+ul.proj-list, ul.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.proj-list li {
+    margin-bottom: 14px;
+    padding-left: 18px;
+    position: relative;
+}
+
+ul.proj-list li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    color: var(--blood);
+}
+
+.proj-name { font-weight: bold; }
+
+/* ── Experience ─────────────────────────────────── */
+
+.quote {
+    color: var(--dim);
+    border-left: 2px solid var(--blood);
+    padding-left: 12px;
+    margin-top: 16px;
+}
+
+ul.xp-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.xp-list > li { margin-bottom: 22px; }
+
+.xp-head {
+    margin: 0 0 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    align-items: baseline;
+}
+
+.xp-role { font-weight: bold; }
+
+.xp-dates {
+    margin-left: auto;
+    color: var(--dim);
+    font-size: 13px;
+}
+
+ul.xp-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.xp-points li {
+    padding-left: 18px;
+    position: relative;
+}
+
+ul.xp-points li::before {
+    content: '-';
+    position: absolute;
+    left: 4px;
+    color: var(--blood);
+}
+
+ul.contact-list li { margin-bottom: 6px; }
+
+/* ── Stack grid ─────────────────────────────────── */
+
+dl.stack-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 10px 14px;
+    margin: 0;
+}
+
+dl.stack-grid dt {
+    color: var(--dim);
+}
+
+dl.stack-grid dd { margin: 0; }
+
+code {
+    display: inline-block;
+    border: 1px solid var(--border);
+    padding: 1px 7px;
+    margin: 2px 3px 2px 0;
+    font-size: 13px;
+    color: var(--fg);
+}
+
+/* ── Footer ─────────────────────────────────────── */
+
+.cv-footer {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 12px;
+}
+
+.cv-footer pre {
+    color: var(--border);
+    overflow-x: auto;
+}
+
+/* ── Demoscene effects ──────────────────────────── */
+
+.blood { color: var(--blood); transition: opacity .3s; }
+
+.drip {
+    position: fixed;
+    color: #cc00005b;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 13px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    color: #1b1b1b5a;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 13px;
+    overflow: hidden;
+    pointer-events: none;
+    white-space: pre;
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+
+@media screen and (max-width: 480px) {
+    pre.main { line-height: 11px; font-size: 9px; }
+    main.cv { font-size: 13px; }
+    dl.stack-grid { grid-template-columns: 1fr; gap: 2px; }
+    dl.stack-grid dt { margin-top: 10px; }
+}
